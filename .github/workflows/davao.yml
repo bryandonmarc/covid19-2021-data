@@ -1,9 +1,9 @@
-name: Send submodule updates to parent repo
+name: (DAVAO DEL SUR) Send submodule updates to parent repo
 
 on:
   push:
     branches: 
-      - main
+      - davao-del-sur
   workflow_dispatch:
 
 jobs:
@@ -13,8 +13,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with: 
-          repository: bryandonmarc/covid-tracker-v3
+          repository: lipatjj/covid-tracker-v3
           token: ${{ secrets.PRIVATE_TOKEN_GITHUB }}
+          
 
       - name: Pull & update submodules recursively
         run: |
@@ -25,5 +26,5 @@ jobs:
           git config user.email "actions@github.com"
           git config user.name "GitHub Actions - update submodules"
           git add --all
-          git commit -m "Updated content" || echo "No changes to commit"
+          git commit -m "(DAVAO DEL SUR) Updated content" || echo "No changes to commit"
           git push
