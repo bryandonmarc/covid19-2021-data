@@ -1,5 +1,5 @@
 # covid19-2021-data
-2021 CSV Data from DOH Data Drop used for Project CoViD v3.0
+2021 CSV Data from DOH Data Drop used for [Project CoViD v3.0](https://mcl-covid19tracker-laguna.netlify.app/)
 
 
 
@@ -47,8 +47,11 @@ const BarangayPSGC =
   'PH0434' +
   CityMuniDigit.toString().padStart(2, '0') +
   BarangayDigit.toString().padStart(3, '0') +
-  (BarangayDigit === '000' ? '-UNKNOWN' : '')
-  
+  (BarangayDigit.toString().padStart(3, '0') === '000' ? '-UNKNOWN' : '')
+
+console.log(CityMuniDigit) // 28
+console.log(BarangayDigit) // 0
+
 console.log(CityMuniPSGC) // PH043428000
 console.log(BarangayPSGC) // PH043428000-UNKNOWN
 ```
